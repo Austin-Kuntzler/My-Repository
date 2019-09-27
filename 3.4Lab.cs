@@ -14,14 +14,14 @@ class MainClass {
     popF=Convert.ToDouble(Console.ReadLine());
     Console.WriteLine("Please enter how many years you want to watch the populations of rabbits and foxes");
     years = Convert.ToInt32(Console.ReadLine());
-    birthR = popR*.2;
+    birthR = .2;
     deathR = popF*.005; //equations for birth and death rates
     birthF = popR*.001;
-    deathF = popF*.2;
+    deathF = .2;
 
     for(int i=years;i>0;i--)
     {
-      popR = (popR)+(birthR)-(popR)*(deathR);
+      popR = popR + (popR*birthR)-(popR*deathR);
       popF = (popF)+(popF*birthF)-(popF*deathF); //equations for populations
       long totalR = (long)(popR); //rounds off the numbers so you dont have a part of an animal left
       long totalF = (long)(popF);
